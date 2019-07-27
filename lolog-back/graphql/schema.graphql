@@ -1,0 +1,12 @@
+type SummonerDTO{
+  profileIconId:Int!
+  name:String!
+  puuid:String!
+  summonerLevel:Float!
+  revisionDate:Float!
+  id:String!
+  accountId:String!
+}
+type Query{
+  getSummonerDTO(summonerName:String!): SummonerDTO!
+}
