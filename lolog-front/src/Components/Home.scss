@@ -1,0 +1,12 @@
+#search-form{
+  padding-top:10em;
+  width:400px;
+  margin:auto;
+  >.input-group{
+    >.input-group-append{
+      >#search-btn{
+        background-color:#fff;
+      }
+    }
+  }
+}
