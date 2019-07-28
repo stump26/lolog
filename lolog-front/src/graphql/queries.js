@@ -11,3 +11,18 @@ export const SUMMONNER_SEARCH=gql`
     }
   }
 `;
+export const SUMMONNER_LEAGUE=gql`
+  query getLeagueEntryDTO($encryptedSummonerId:String!){
+    getLeagueEntryDTO(encryptedSummonerId:$encryptedSummonerId){
+    leagueId
+    queueType
+    tier
+    rank
+    summonerId
+    summonerName
+    leaguePoints
+    wins
+    losses
+  }
+}
+`;

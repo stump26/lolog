@@ -11,3 +11,11 @@ export const getSummonerDTO = (summonerName)=>{
   return fetch(REQUEST_URL)
     .then(res=>res.json())
 }
+
+export const getLeagueEntryDTO = (encryptedSummonerId)=>{
+  let REQUEST_URL = RIOT_URL + `/lol/league/v4/entries/by-summoner/${encryptedSummonerId}`;
+  REQUEST_URL += `?api_key=${API_KEY}`;
+  console.log('getLeagueEntryDTO->',encryptedSummonerId,'->',REQUEST_URL);
+  return fetch(REQUEST_URL)
+    .then(res=>res.json())
+}

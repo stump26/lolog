@@ -7,6 +7,29 @@ type SummonerDTO{
   id:String!
   accountId:String!
 }
+type MiniSeriesDTO{
+  progress:String!
+  losses:Int!
+  target:Int!
+  winss:Int!
+}
+type LeagueEntryDTO {
+  leagueId:String!
+  queueType:String!
+  tier:String!
+  rank:String!
+  summonerId:String!
+  summonerName:String!
+  leaguePoints:Int!
+  wins:Int!
+  losses: Int!,
+  veteran:Boolean!
+  inactive:Boolean!
+  freshBlood: Boolean!,
+  hotStrak:Boolean!
+  miniSeries:MiniSeriesDTO
+}
 type Query{
   getSummonerDTO(summonerName:String!): SummonerDTO!
+  getLeagueEntryDTO(encryptedSummonerId:String!):[LeagueEntryDTO]!
 }
