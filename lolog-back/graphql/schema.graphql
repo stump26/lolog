@@ -22,12 +22,28 @@ type LeagueEntryDTO {
   summonerName:String!
   leaguePoints:Int!
   wins:Int!
-  losses: Int!,
+  losses: Int!
   veteran:Boolean!
   inactive:Boolean!
-  freshBlood: Boolean!,
+  freshBlood: Boolean!
   hotStrak:Boolean!
   miniSeries:MiniSeriesDTO
+}
+type MatchReferenceDTO{
+  lane:String!
+  gameId:Float!
+  champion:Int!
+  platformId:String!
+  season:Int!
+  queue:Int!
+  role:String!
+  timestamp:Float!
+}
+type MatchlistDTO {
+  matches:[MatchReferenceDTO]!
+  totalGames:Int!
+  startIndex:Int!
+  endIndex:Int!
 }
 type Query{
   getSummonerDTO(summonerName:String!): SummonerDTO!
