@@ -8,12 +8,16 @@ const SearchIDComponent = ({summmonerSearchOnClick})=>{
   const [searchName, setSearchName] = useState();
   
   const searchNameOnChange = (e)=>{
+    e.preventDefault();
     setSearchName(e.target.value);
   }
   
   return (
     <>
       <div id="body">
+        <div className="md-center" id="logo">
+          <img src="/img/lolog_logo.png" alt="lolog" width="350px" />
+        </div>
         <Form className="md-center" id="search-form" >
           <InputGroup>
             <FormControl

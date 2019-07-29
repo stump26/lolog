@@ -1,10 +1,10 @@
 type SummonerDTO{
+  id:String!
   profileIconId:Int!
   name:String!
   puuid:String!
   summonerLevel:Float!
   revisionDate:Float!
-  id:String!
   accountId:String!
 }
 type MiniSeriesDTO{

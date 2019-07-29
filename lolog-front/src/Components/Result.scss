@@ -1,0 +1,50 @@
+.container{
+  height: 100%;
+}
+#errorMSG-block{
+  color:#fff;
+  position: fixed;
+  left: 38%;
+  top: 40%;
+  font-size: 40px;
+  >div:nth-child(2){ //부 메세지.
+    font-size: 20px;
+  }
+}
+#loading-block{
+  color:#fff;
+  width: 100px;
+  position: fixed;
+  left: 45%;
+  top: 40%;
+  >div:nth-child(1){
+    margin:auto 13px auto;
+  }
+}
+#Result-Body {
+  position: relative;
+  background-color:#ffffff;
+  height: 100%;
+  width: 100%;
+  padding: 12px 30px;
+  >.SummonerInfoCard{
+    height: 65px;
+    border-bottom: solid 1px #969696;
+    vertical-align: bottom;
+    padding: 11px 20px 2px;
+    >div>#Summoner-Name{
+      font-weight: bold;
+      font-size:20px;
+    }
+    >#Last-PlayTime{
+      font-size: 10px;
+      color:#414141;
+    }
+  }
+}
+
+@media (min-width: 1200px){
+  .container {
+    max-width: 1300px;
+  }
+}

@@ -21,8 +21,9 @@ const SummonerInfoCard =({summonerDTO:{
     return result + '전'
   }
   return(
-    <div id={id}>
-      {name}-{summonerLevel} 마지막 플레이 : {conversionTimeTic(renewalTime)} 
+    <div className="SummonerInfoCard" id={id}>
+      <div><span id="Summoner-Name">{name}</span> {summonerLevel}Lv </div>
+      <div id="Last-PlayTime">마지막 플레이 : {conversionTimeTic(renewalTime)} </div>
     </div>
   );
 }
