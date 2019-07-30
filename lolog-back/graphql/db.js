@@ -3,6 +3,21 @@ import fetch from 'node-fetch';
 import { API_KEY } from '../apikey.json';
 
 const RIOT_URL = "https://kr.api.riotgames.com/";
+let CHAMPION_JSON = {};
+(()=>{
+  const REQUEST_URL = "http://ddragon.leagueoflegends.com/cdn/9.14.1/data/en_US/champion.json";
+  return fetch(REQUEST_URL)
+    .then(res=>{
+      return res.json()
+    })
+    .then(json=>
+      Object.keys(json.data).reduce((acc,cur)=>{
+        acc[json.data[cur].key] = json.data[cur]
+        return acc
+    },{})).then((json)=>{
+      CHAMPION_JSON = json;
+    })
+})();
 
 export const getSummonerDTO = (summonerName)=>{
   let REQUEST_URL = RIOT_URL + `/lol/summoner/v4/summoners/by-name/${summonerName}`;
@@ -29,14 +44,6 @@ export const getMatchlistDTO = (encryptedAccountId,from=0,to=20)=>{
 }
 
 export const getChampiomDTO = (championId)=>{
-  let REQUEST_URL = "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json";
-  console.log("TCL: getChampiom -> REQUEST_URL", REQUEST_URL)
-  return fetch(REQUEST_URL)
-    .then(res=>res.json())
-    .then(json=>
-      Object.keys(json.data).reduce((acc,cur)=>{
-        acc[json.data[cur].key] = json.data[cur]
-        return acc
-      },{}))
-    .then(championDict=>championDict[championId])
+  console.log("TCL: getChampiomDTO -> championId", championId)
+  return CHAMPION_JSON[championId];
 }

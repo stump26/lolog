@@ -66,7 +66,7 @@ const Result = ({
                     </Query>
                   </div>
                   <div id="Result-match-list">
-                    <Query query={MATCH_LIST} variables={{encryptedAccountId:data.getSummonerDTO.accountId}}>
+                    <Query query={MATCH_LIST} variables={{encryptedAccountId:data.getSummonerDTO.accountId,from:0,to:20}}>
                       {({loading, error, data})=>{
                           if(loading) return (
                             <div id="loading-block">

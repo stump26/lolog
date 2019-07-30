@@ -28,8 +28,8 @@ export const SUMMONNER_LEAGUE=gql`
 `;
 
 export const MATCH_LIST=gql`
-query getMatchlistDTO($encryptedAccountId:String!){
-  getMatchlistDTO(encryptedAccountId:$encryptedAccountId){
+query getMatchlistDTO($encryptedAccountId:String!,$from:Int,$to:Int){
+  getMatchlistDTO(encryptedAccountId:$encryptedAccountId,from:$from,to:$to){
       matches{
         platformId
         gameId
@@ -45,4 +45,22 @@ query getMatchlistDTO($encryptedAccountId:String!){
       endIndex
     }
   }
+`;
+
+export const CHAMPION_INFO=gql`
+query getCampionDTO($championId:Int!){
+  getCampionDTO(championId:$championId){
+    version
+    id
+    key
+    name
+    image{
+      full
+      sprite
+      group
+      w
+      h
+    }
+  }
+}
 `;
