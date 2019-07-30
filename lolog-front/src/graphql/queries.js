@@ -26,3 +26,23 @@ export const SUMMONNER_LEAGUE=gql`
   }
 }
 `;
+
+export const MATCH_LIST=gql`
+query getMatchlistDTO($encryptedAccountId:String!){
+  getMatchlistDTO(encryptedAccountId:$encryptedAccountId){
+      matches{
+        platformId
+        gameId
+        champion
+        queue
+        season
+        timestamp
+        lane
+        role
+      }
+      totalGames
+      startIndex
+      endIndex
+    }
+  }
+`;

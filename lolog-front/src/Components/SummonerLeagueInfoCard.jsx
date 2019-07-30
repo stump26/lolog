@@ -1,5 +1,4 @@
 import React from 'react';
-import './SummonerLeagueInfoCard.scss';
 
 const SummonerLeagueInfoCard=(summonerLeagueData) => {
 	console.log("TCL: SummonerLeagueInfoCard -> summonerLeagueData", summonerLeagueData)
@@ -16,9 +15,9 @@ const SummonerLeagueInfoCard=(summonerLeagueData) => {
 		</div>
 	})
 	return (
-		<div>
+		<>
 			{LeagueEntrys}
-		</div>
+		</>
 	)
 }
 

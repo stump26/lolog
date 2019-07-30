@@ -38,10 +38,33 @@
     }
     >#Last-PlayTime{
       font-size: 10px;
-      color:#414141;
+      color:#929292;
+    }
+  }
+  >#Result-body-bottom{
+    >#Result-left{    
+      display: inline-block;
+      vertical-align: top;
+      width: 30%;
+      >.rank-card{
+        position: relative;
+        padding:10px;
+        width: 100%;
+        border: solid 1px #969696;
+      }
+    }
+    >#Result-match-list{
+      width: 70%;
+      display: inline-block;
+      >ul{
+        >li{
+          height: 80px;
+        }
+      }
     }
   }
 }
+
 
 @media (min-width: 1200px){
   .container {

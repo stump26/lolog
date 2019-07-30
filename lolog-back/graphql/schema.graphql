@@ -29,15 +29,15 @@ type LeagueEntryDTO {
   hotStrak:Boolean!
   miniSeries:MiniSeriesDTO
 }
-type MatchReferenceDTO{
-  lane:String!
+type MatchReferenceDTO {
+  platformId:String!
   gameId:Float!
   champion:Int!
-  platformId:String!
-  season:Int!
   queue:Int!
-  role:String!
+  season:Int!
   timestamp:Float!
+  lane:String!
+  role:String!
 }
 type MatchlistDTO {
   matches:[MatchReferenceDTO]!
@@ -45,7 +45,60 @@ type MatchlistDTO {
   startIndex:Int!
   endIndex:Int!
 }
+type CampionDTO{
+  version: String!
+  id: String!
+  key: Int!
+  name: String!
+  title: String!
+  blurb: String!
+  info: champinonInfo
+  image: championImage!
+  tags: [String]!
+  partype: String!
+  stats: championDetailStats
+}
+type championImage{
+  full: String!
+  sprite: String!
+  group: String!
+  x: Int!
+  y: Int!
+  w: Int!
+  h: Int!
+}
+type champinonInfo{
+  attack: Int!
+  defense: Int!
+  magic: Int!
+  difficulty: Int!
+}
+type championDetailStats{
+    hp: Float!
+    hpperlevel: Int!
+    mp: Float!
+    mpperlevel: Int!
+    movespeed: Int!
+    armor: Float!
+    armorperlevel: Float!
+    spellblock: Float!
+    spellblockperlevel: Float!
+    attackrange: Int!
+    hpregen: Float!
+    hpregenperlevel: Float!
+    mpregen: Float!
+
+    mpregenperlevel: Float!
+    crit: Int!
+    critperlevel: Int!
+    attackdamage: Float!
+    attackdamageperlevel: Float!
+    attackspeedoffset: Float!
+    attackspeedperlevel: Float!
+  }
 type Query{
   getSummonerDTO(summonerName:String!): SummonerDTO!
   getLeagueEntryDTO(encryptedSummonerId:String!):[LeagueEntryDTO]!
+  getMatchlistDTO(encryptedAccountId:String!,from:Int,to:Int):MatchlistDTO!
+  getCampionDTO(championId:Int!):CampionDTO!
 }
