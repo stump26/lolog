@@ -86,3 +86,5 @@ yarn.lock
 
 # DynamoDB Local files
 .dynamodb/
+
+apikey.json
