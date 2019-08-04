@@ -26,9 +26,15 @@ const EachGameCard = ({ key, champion, timestamp, queue })=>{
             );
           }
           if(data){
-            console.log(champion_Icon_URL+data.getCampionDTO.image.full);
+            console.log(data);
             return(
-              <img src={champion_Icon_URL+data.getCampionDTO.image.full} width={80}/>
+              <>
+                <img src={champion_Icon_URL+data.getCampionDTO.image.full} width={80} alt={data.getCampionDTO.id}/>
+                <span> {data.getCampionDTO.id} </span>
+                <span> {timestamp} </span>
+                <span> {queue} </span>
+              </>
+
             )
           }
         }

@@ -24,7 +24,6 @@ const SearchIDComponent = ({summmonerSearchOnClick})=>{
               placeholder="소환사 명"
               aria-label="소환사 명"
               aria-describedby="basic-addon2"
-              className="smmnr-Input"
               onChange={searchNameOnChange}
             />
             <InputGroup.Append>
@@ -32,7 +31,7 @@ const SearchIDComponent = ({summmonerSearchOnClick})=>{
                 onClick={(e)=>{summmonerSearchOnClick(e,searchName)}} 
                 variant="outline-secondary"
               >
-                <FontAwesomeIcon className="ic_search" icon={faSearch} />
+                <FontAwesomeIcon icon={faSearch} />
               </Button>
             </InputGroup.Append>
           </InputGroup>

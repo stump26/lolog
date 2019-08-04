@@ -8,11 +8,31 @@
 
 #search-form{
   width:400px;
-  margin:auto;
+  margin:35px auto;
   >.input-group{
+    box-shadow: 1px 7px 14px 7px #61b188;  
+    border-radius: 10px;
+    >.form-control:focus{
+      color: #5eda9b;
+      background-color: #fff;
+      border-color: #7cff9c;
+      border-right: 0px;
+      outline: 0;
+      box-shadow: -2px 0px 2px 0.2rem rgba(104, 243, 151, 0.51);
+    }
     >.input-group-append{
       >#search-btn{
-        background-color:#fff;
+        width:60px;
+        background-color:#5eda9b;
+        border-color: #5eda9b;
+        color:#fff;
+        right:0px;
+        transition-property: width;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0, 0.36, 0, 0.97);
+      }
+      >#search-btn:hover{
+        width: 88px;
       }
     }
   }
