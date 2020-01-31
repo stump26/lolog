@@ -1,0 +1,28 @@
+{
+  "name": "lolog-back-function",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc && yarn move",
+    "move": "cp -r lolog-back-function/graphql/typedefs dist/lolog-back-function/graphql/typedefs && cp lolog-back-function/apikey.json dist/lolog-back-function/apikey.json",
+    "watch": "tsc -w",
+    "prestart": "yarn build",
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@types/graphql": "^14.5.0",
+    "apollo-server-azure-functions": "^2.9.16",
+    "graphql": "^14.6.0",
+    "graphql-tools": "^4.0.6",
+    "merge-graphql-schemas": "^1.7.6",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@azure/functions": "^1.0.2-beta2",
+    "@types/node": "^13.5.3",
+    "typescript": "^3.3.3"
+  }
+}
