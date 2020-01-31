@@ -1,0 +1,12 @@
+FROM node:12.13.1
+
+WORKDIR /usr/app
+
+COPY package*.json ./
+
+RUN yarn
+
+COPY . .
+
+EXPOSE 4000
+CMD ["yarn", "production"]
