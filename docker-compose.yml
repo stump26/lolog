@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  backend:
+    image: lolog.azurecr.io/lolog-back:0.1.0
+    environment:
+      - API_KEY
+    ports:
+      - "4000:4000"
+  discord-bot:
+    image: lolog.azurecr.io/lolog-discord:0.1.0
+    links:
+      - backend:lolog-backend
