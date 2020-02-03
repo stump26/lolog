@@ -1,13 +1,25 @@
 version: "3"
 
 services:
+  discord-bot:
+    image: lolog.azurecr.io/lolog-discord:0.2.0
+    environment:
+      - MONGO_URL=db:27017
+      - LOL_CLIENT_VERSION=10.2.1
+    links:
+      - backend:lolog-backend
+      - db
+  db:
+    image: mongo:3.6
+    ports:
+      - "27017:27017"
+    volumes:
+      - "mongo-data-volume:/data/db"
   backend:
     image: lolog.azurecr.io/lolog-back:0.1.0
     environment:
-      - API_KEY
+      - API_KEY=RGAPI-fe7dd8e3-7365-48d2-9170-504907f56a28
     ports:
       - "4000:4000"
-  discord-bot:
-    image: lolog.azurecr.io/lolog-discord:0.1.0
-    links:
-      - backend:lolog-backend
+volumes:
+  mongo-data-volume:
