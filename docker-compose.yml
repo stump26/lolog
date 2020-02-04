@@ -18,7 +18,7 @@ services:
   backend:
     image: lolog.azurecr.io/lolog-back:0.1.0
     environment:
-      - API_KEY=RGAPI-fe7dd8e3-7365-48d2-9170-504907f56a28
+      - API_KEY
     ports:
       - "4000:4000"
 volumes:
