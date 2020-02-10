@@ -88,3 +88,6 @@ yarn.lock
 .dynamodb/
 
 apikey.json
+
+# Azure_Container_Instance deploy Yaml file
+azure-container-instance-deploy.yaml
